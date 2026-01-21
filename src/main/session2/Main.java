@@ -28,5 +28,7 @@ public class Main {
         TamGiac tg = new TamGiac(3,4,5);
         System.out.println("Chu vi:"+tg.chuVi());
         System.out.println("Dien tich:"+tg.dienTich());
+        tg.a = 10;
+        tg.name = "Tam giac can";
     }
 }
