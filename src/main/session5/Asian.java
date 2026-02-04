@@ -1,6 +1,6 @@
 package main.session5;
 
-public class Asian extends Person{
+public class Asian extends Person implements LoveTips1{
     @Override
     public void eat() {
         System.out.println("Asian eating...");
@@ -11,6 +11,21 @@ public class Asian extends Person{
         System.out.println("Asian sleeping..");
     }
     public void fly(){
+
+    }
+
+    @Override
+    public void dinner() {
+
+    }
+
+    @Override
+    public void goToCinema() {
+
+    }
+
+    @Override
+    public void goToCafe() {
 
     }
 }

@@ -17,5 +17,44 @@ public class Main {
                 ((Asian) arr.get(i)).fly();
             }
         }
+
+        Person p = new Person() { // anonymous class
+            @Override
+            public void eat() {
+
+            }
+
+            @Override
+            public void sleep() {
+
+            }
+        };
+        LoveTips1 lt = new LoveTips1() {
+            @Override
+            public void dinner() {
+
+            }
+
+            @Override
+            public void goToCinema() {
+
+            }
+
+            @Override
+            public void goToCafe() {
+
+            }
+        };
+        LoveTipSpecial ls = new LoveTipSpecial() {
+            @Override
+            public void xyz(String s, int y) {
+
+            }
+        };
+        LoveTipSpecial lss = (s,y)->{ // lambda expression
+
+        };
+        ArrayList<Integer> arrs = new ArrayList<>();
+        arrs.stream().filter(i -> i>0).map(i->i<10).toArray();
     }
 }
