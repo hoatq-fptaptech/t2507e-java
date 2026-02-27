@@ -1,20 +1,19 @@
 package main.session7;
 
+import main.database.Database;
+
 import java.sql.*;
 import java.time.LocalDate;
 
 public class Demo1 {
     public static void main(String[] args){
-        String connectionString = "jdbc:mysql://localhost:3306/t2507e_jp";
-        String user = "root";
-        String password= "root";
-        String driver = "com.mysql.cj.jdbc.Driver";
+
         try {
-            Class.forName(driver);
-            Connection conn = DriverManager.getConnection(connectionString,user,password);
+            Database db = new Database();
             // lấy thông tin sinh viên
             String sql = "select * from students";
-            Statement stt = conn.createStatement();
+
+            Statement stt = db.getStatement();
             ResultSet rs = stt.executeQuery(sql);
             while (rs.next()){
                 Integer x = rs.getInt("id");
@@ -27,7 +26,7 @@ public class Demo1 {
 //            String sql1 = "insert into students(name,dob,mark) values('Phan Đức Hợp','2003-02-21',8)";
 //            stt.execute(sql1);
             String sql2 = "INSERT INTO students(name,dob,mark) VALUES(?,?,?)";
-            PreparedStatement pt = conn.prepareStatement(sql2);
+            PreparedStatement pt = db.getPreparedStatement(sql2);
             pt.setString(1,"Nguyễn Công Tiến");
             pt.setDate(2,Date.valueOf("1990-09-27"));
             pt.setInt(3,9);
