@@ -9,4 +9,5 @@ public interface StudentDao {
     boolean create(Student student);
     boolean update(Student student);
     boolean delete(Integer id);
+    Student findById(Integer id);
 }
