@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class StudentDaoImpl implements StudentDao{
+public class StudentDaoImpl implements BaseDao<Student,Integer>{
     private Database db;
 
     public StudentDaoImpl() {
