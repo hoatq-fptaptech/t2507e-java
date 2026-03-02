@@ -1,5 +1,12 @@
 package main.session8;
 
+import main.dao.BaseDao;
+import main.dao.StudentDao;
+import main.dao.StudentDaoImpl;
+import main.dao.SubjectDaoImpl;
+import main.enums.FactoryDao;
+import main.factory.Factory;
+
 public class Main {
     public static void main(String[] args){
         NumberList<Integer> n1 = new NumberList<>();
@@ -10,5 +17,12 @@ public class Main {
         n3.x = "Hello";
 
         n3.info(5.9,"A");
+        try {
+            BaseDao sd = Factory.getModel(FactoryDao.STUDENT);
+            BaseDao sb = Factory.getModel(FactoryDao.SUBJECT);
+        }catch (Exception e){
+
+        }
+
     }
 }
